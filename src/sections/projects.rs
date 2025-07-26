@@ -22,7 +22,7 @@ pub fn Projects() -> Element {
     let portfolio = get_portfolio();
 
     rsx! {
-        div { class:"bg-slate-300  w-full min-h-screen p-4 pt-8 md:p-8 ",
+        div { class:"bg-slate-200 w-full min-h-screen p-4 pt-8 md:p-8 ",
         id:"projects",
 
             // Projects grid
