@@ -1,0 +1,23 @@
+[application]
+
+[web.app]
+
+# HTML title tag content
+title = "Remy Sedlak"
+
+# include `assets` in web platform
+[web.resource]
+assets = ["assets"]
+
+# Additional CSS style files
+style = []
+
+# Additional JavaScript files
+script = []
+
+[web.resource.dev]
+assets = ["assets"]
+
+# Javascript code file
+# serve: [dev-server] only
+script = []
