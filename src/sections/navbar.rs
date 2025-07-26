@@ -72,10 +72,16 @@ pub fn Navbar() -> Element {
                         "Timeline"
                     }
                     button {
+                        onclick: |_| scroll_to_id("about"),
+                        class: "hover:cursor-pointer hover:text-slate-400 transition-colors",
+                        "About",
+                    },
+                    button {
                         onclick: |_| scroll_to_id("links"),
                         class: "hover:cursor-pointer hover:text-slate-400 transition-colors",
                         "Links"
-                    }
+                    },
+                    
                 }
             }
         }

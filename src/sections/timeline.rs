@@ -64,13 +64,13 @@ pub fn Timeline() -> Element {
     rsx! {
         div { id:"timeline",
             
-            class: "p-4 md:p-8 space-y-6 bg-slate-200",
+            class: "p-4 md:p-8 bg-slate-200",
             h1 {
-                class:"text-4xl md:text-4xl font-bold md:mb-4 mb-6",
+                class:"text-4xl font-bold mb-4 md:mb-6",
                 "Timeline"
             }
             div {
-                class: "flex flex-col gap-8 pb-8",
+                class: "flex flex-col gap-8",
                 {TIMELINE.iter().map(|entry| {
                     rsx! {
                         div {

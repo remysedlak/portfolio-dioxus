@@ -5,6 +5,9 @@
 mod hero;
 pub use hero::Hero;
 
+mod gallery;
+pub use gallery::About;
+
 mod navbar;
 pub use navbar::Navbar;
 

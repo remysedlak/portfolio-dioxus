@@ -6,7 +6,7 @@ pub fn Links() -> Element {
         class:"p-6 space-y-6 bg-yellow-50 relative",
         id:"links",
         h1 {
-            class:"text-3xl md:text-4xl font-bold mb-2 md:mb-5",
+            class:"text-3xl md:text-4xl font-bold mb-2 md:mb-4",
             "Links"
         }
         p {
