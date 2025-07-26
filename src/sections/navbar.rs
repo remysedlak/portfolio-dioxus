@@ -113,6 +113,11 @@ pub fn Navbar() -> Element {
                         "Timeline"
                     }
                     button {
+                        onclick: close_menu_and_scroll("about"),
+                        class: "font-semibold border text-center text-lg py-2 px-2 hover:bg-slate-800 rounded transition-colors",
+                        "About Me"
+                    }
+                    button {
                         onclick: close_menu_and_scroll("links"),
                         class: "font-semibold border text-center text-lg py-2 px-2 hover:bg-slate-800 rounded transition-colors",
                         "Links"

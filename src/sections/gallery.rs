@@ -39,7 +39,7 @@ pub fn About() -> Element {
         section {
             id: "about",
             class: "p-4 md:p-8 bg-slate-200",
-            div { class:" pb-16",
+            div { class:" pb-8",
 
             
             h2 {
@@ -47,11 +47,11 @@ pub fn About() -> Element {
                 "About Me"
             }
             div {
-                class: "flex flex-col md:flex-row gap-y-8 md:gap-x-8 flex-1",
+                class: "flex flex-col md:flex-row gap-y-8 flex-1 justify-around",
 
                 // Text block - 2/3 on medium+ screens
                 div {
-                    class: "md:w-2/3  bg-white p-4 rounded-2xl shadow-2xl text-slate-800 space-y-6 leading-relaxed",
+                    class: "bg-white p-4 rounded-2xl shadow-2xl text-slate-800 space-y-6 leading-relaxed",
 
                     p {
                         class: "text-3xl font-bold text-slate-900 mb-4",
@@ -74,48 +74,7 @@ pub fn About() -> Element {
                     }
                 }
 
-                // Gallery block - 1/3 on medium+ screens
-                div {
-                    class: "md:w-1/3 flex flex-col items-center mt-4 md:mt-0",
-
-                    // Image container
-                    div {
-                        class: "w-full h-[40vh] flex justify-center items-start",
-                        img {
-                            src: "{images[*current_index.read()]}",
-                            class: "max-h-full object-contain object-top rounded-xl shadow-md transition-all duration-500 ease-in-out"
-                        }
-                    }
-
-                    // Title + Dots
-                    div {
-                        class: "flex flex-col items-center mt-4 space-y-3",
-
-                        p {
-                            class: "text-lg font-semibold text-gray-700 text-center",
-                            "{titles[*current_index.read()]}"
-                        }
-
-                        div {
-                            class: "flex space-x-3",
-                            for i in 0..image_count {
-                                div {
-                                    class: format_args!(
-                                        "w-3 h-3 mb-8 md:mb-0 rounded-full cursor-pointer transition-transform duration-300 {}",
-                                        if i == *current_index.read() {
-                                            "bg-blue-600 scale-125"
-                                        } else {
-                                            "bg-gray-400 hover:bg-gray-500"
-                                        }
-                                    ),
-                                    onclick: move |_| {
-                                        current_index.set(i);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                
             }
         }
         }
