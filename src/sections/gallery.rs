@@ -51,7 +51,7 @@ pub fn About() -> Element {
 
                 // Text block - 2/3 on medium+ screens
                 div {
-                    class: "bg-white p-4 rounded-2xl shadow-2xl text-slate-800 space-y-6 leading-relaxed",
+                    class: "md:w-1/2  bg-white p-4 rounded-2xl shadow-2xl text-slate-800 space-y-6 leading-relaxed",
 
                     p {
                         class: "text-3xl font-bold text-slate-900 mb-4",
@@ -74,7 +74,48 @@ pub fn About() -> Element {
                     }
                 }
 
-                
+                // // Gallery block - 1/3 on medium+ screens
+                // div {
+                //     class: "md:w-1/2 flex flex-col items-center mt-4 md:mt-0",
+
+                //     // Image container
+                //     div {
+                //         class: "w-full flex justify-center items-start",
+                //         img {
+                //             src: "{images[*current_index.read()]}",
+                //             class: "h-[100px] object-fill rounded-xl shadow-md transition-all duration-500 ease-in-out"
+                //         }
+                //     }
+
+                //     // Title + Dots
+                //     div {
+                //         class: "flex flex-col items-center mt-4 space-y-3",
+
+                //         p {
+                //             class: "text-lg font-semibold text-gray-700 text-center",
+                //             "{titles[*current_index.read()]}"
+                //         }
+
+                //         div {
+                //             class: "flex space-x-3",
+                //             for i in 0..image_count {
+                //                 div {
+                //                     class: format_args!(
+                //                         "w-3 h-3 rounded-full cursor-pointer transition-transform duration-300 {}",
+                //                         if i == *current_index.read() {
+                //                             "bg-blue-600 scale-125"
+                //                         } else {
+                //                             "bg-gray-400 hover:bg-gray-500"
+                //                         }
+                //                     ),
+                //                     onclick: move |_| {
+                //                         current_index.set(i);
+                //                     }
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }
             }
         }
         }
