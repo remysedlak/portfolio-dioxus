@@ -69,9 +69,12 @@ fn ProjectCard(project: Project) -> Element {
                         }
                     }
                 }
+                hr {
+                    class:"text-slate-300 pt-2"
+                }
                 // Description (with HTML support)
                 div {
-                    class: "text-gray-600 mb-4 text-sm leading-relaxed",
+                    class: "text-gray-600 mb-4 md:text-sm leading-relaxed",
                     dangerous_inner_html: "{project.desc}"
                 }
 

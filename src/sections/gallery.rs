@@ -1,39 +1,38 @@
 use dioxus::prelude::*;
-use gloo_timers::callback::Interval;
 
 #[component]
 pub fn About() -> Element {
-    let images = vec![
-        asset!("/assets/slideshow/h4h-2025-204-2.jpg"),
-        asset!("/assets/slideshow/54413401962_2192bd17d1_c.jpg"),
-        asset!("/assets/slideshow/IMG_2863.png"),
-        asset!("/assets/slideshow/IMG_2927.png"),
-        asset!("/assets/slideshow/remysedlak.jpg")
-    ];
+    // let images = vec![
+    //     asset!("/assets/slideshow/h4h-2025-204-2.jpg"),
+    //     asset!("/assets/slideshow/54413401962_2192bd17d1_c.jpg"),
+    //     asset!("/assets/slideshow/IMG_2863.png"),
+    //     asset!("/assets/slideshow/IMG_2927.png"),
+    //     asset!("/assets/slideshow/remysedlak.jpg")
+    // ];
 
-    let titles = vec![
-        "H4H Team, The Inquisitor",
-        "H4H Finals @ Harrisburg",
-        "Building my first computer",
-        "My cat committing a push",
-        "Portrait of Remy Sedlak"
-    ];
+    // let titles = vec![
+    //     "H4H Team, The Inquisitor",
+    //     "H4H Finals @ Harrisburg",
+    //     "Building my first computer",
+    //     "My cat committing a push",
+    //     "Portrait of Remy Sedlak"
+    // ];
 
-    let mut current_index = use_signal(|| 0);
-    let mut _interval = use_signal(|| None::<Interval>);
-    let image_count = images.len();
+    // let mut current_index = use_signal(|| 0);
+    // let mut _interval = use_signal(|| None::<Interval>);
+    // let image_count = images.len();
 
-    use_effect(move || {
-        let mut current_index = current_index.clone();
-        let mut interval_signal = _interval.clone();
+    // use_effect(move || {
+    //     let mut current_index = current_index.clone();
+    //     let mut interval_signal = _interval.clone();
 
-        let interval = Interval::new(7000, move || {
-            let current = *current_index.read();
-            current_index.set((current + 1) % image_count);
-        });
+    //     let interval = Interval::new(7000, move || {
+    //         let current = *current_index.read();
+    //         current_index.set((current + 1) % image_count);
+    //     });
 
-        interval_signal.set(Some(interval));
-    });
+    //     interval_signal.set(Some(interval));
+    // });
 
     rsx! {
         section {
@@ -51,7 +50,7 @@ pub fn About() -> Element {
 
                 // Text block - 2/3 on medium+ screens
                 div {
-                    class: "md:w-1/2  bg-white p-4 rounded-2xl shadow-2xl text-slate-800 space-y-6 leading-relaxed",
+                    class: " bg-white p-4 rounded-2xl shadow-2xl text-slate-800 space-y-6 leading-relaxed",
 
                     p {
                         class: "text-3xl font-bold text-slate-900 mb-4",

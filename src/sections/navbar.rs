@@ -1,12 +1,11 @@
 use dioxus::prelude::*;
-use wasm_bindgen::JsCast;
 use web_sys::{ScrollIntoViewOptions, window};
 
 pub fn scroll_to_id(id: &str) {
     if let Some(document) = window().and_then(|w| w.document()) {
         if let Some(elem) = document.get_element_by_id(id) {
-            let mut options = ScrollIntoViewOptions::new();
-            options.behavior(web_sys::ScrollBehavior::Smooth);
+            let options = ScrollIntoViewOptions::new();
+            options.set_behavior(web_sys::ScrollBehavior::Smooth);
             elem.scroll_into_view_with_scroll_into_view_options(&options);
         }
     }
@@ -37,7 +36,7 @@ pub fn Navbar() -> Element {
         div { 
             class: "overflow-y-hidden h-40 md:h-20 flex scroll-smooth bg-slate-900 text-slate-100 text-xl p-6  flex justify-right sticky top-0 z-50",
             div { 
-                class: "flex flex-row gap-x-3 md:gap-x-6 ml-auto items-center justify-center",
+                class: "flex flex-row gap-x-3 md:gap-x-10 ml-auto items-center justify-center",
                 h1 {
                     class: "text-3xl font-semibold items-center justify-center absolute left-4",
                     "Remy Sedlak"
@@ -55,33 +54,27 @@ pub fn Navbar() -> Element {
                 
                 // Desktop menu (hidden on mobile)
                 div { 
-                    class: "hidden md:flex flex-row gap-x-3 text-xl",
+                    class: "hidden md:flex flex-row gap-x-5 text-xl",
                     button {
                         onclick: |_| scroll_to_id("hero"),
-                        class: "hover:cursor-pointer hover:text-slate-400 transition-colors",
+                        class: "hover:cursor-pointer hover:text-slate-400  transition-colors",
                         "Home"
                     }
                     button {
                         onclick: |_| scroll_to_id("projects"),
-                        class: "hover:cursor-pointer hover:text-slate-400 transition-colors",
+                        class: "hover:cursor-pointer hover:text-slate-400  transition-colors",
                         "Projects"
                     }
                     button {
                         onclick: |_| scroll_to_id("timeline"),
-                        class: "hover:cursor-pointer hover:text-slate-400 transition-colors",
+                        class: "hover:cursor-pointer hover:text-slate-400  transition-colors",
                         "Timeline"
                     }
                     button {
                         onclick: |_| scroll_to_id("about"),
-                        class: "hover:cursor-pointer hover:text-slate-400 transition-colors",
+                        class: "hover:cursor-pointer hover:text-slate-400  transition-colors",
                         "About",
-                    },
-                    button {
-                        onclick: |_| scroll_to_id("links"),
-                        class: "hover:cursor-pointer hover:text-slate-400 transition-colors",
-                        "Links"
-                    },
-                    
+                    },           
                 }
             }
         }
@@ -116,11 +109,6 @@ pub fn Navbar() -> Element {
                         onclick: close_menu_and_scroll("about"),
                         class: "font-semibold border text-center text-lg py-2 px-2 hover:bg-slate-800 rounded transition-colors",
                         "About Me"
-                    }
-                    button {
-                        onclick: close_menu_and_scroll("links"),
-                        class: "font-semibold border text-center text-lg py-2 px-2 hover:bg-slate-800 rounded transition-colors",
-                        "Links"
                     }
                 }
             }
