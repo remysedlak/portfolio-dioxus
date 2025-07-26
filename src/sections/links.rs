@@ -10,8 +10,8 @@ pub fn Links() -> Element {
             "Links"
         }
         p {
-            class:"absolute right-4 bottom-4 mb-auto font-light",
-            {"Developed with "},
+            class:"absolute right-4 bottom-4 mb-auto font-light text-sm",
+            {"Assembled with "},
             a {
                 href:"https://dioxuslabs.com/",
                 target:"_blank",

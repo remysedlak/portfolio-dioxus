@@ -64,9 +64,9 @@ pub fn Timeline() -> Element {
     rsx! {
         div { id:"timeline",
             
-            class: "p-8 space-y-6 bg-slate-200",
+            class: "p-4 md:p-8 space-y-6 bg-slate-200",
             h1 {
-                class:"text-4xl md:text-4xl font-bold mb-5",
+                class:"text-4xl md:text-4xl font-bold md:mb-4 mb-6",
                 "Timeline"
             }
             div {

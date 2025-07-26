@@ -22,12 +22,12 @@ pub fn Projects() -> Element {
     let portfolio = get_portfolio();
 
     rsx! {
-        div { class:"bg-slate-200  w-full min-h-screen p-8 ",
+        div { class:"bg-slate-200  w-full min-h-screen p-4 pt-8 md:p-8 ",
         id:"projects",
 
             // Projects grid
             div { class: "max-w-7xl mx-auto",
-            h1 { class: "text-3xl md:text-4xl font-bold mb-6", "My Projects" }
+            h1 { class: "text-3xl md:text-4xl font-bold mb-4 md:mb-6", "My Projects" }
                 div { class: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
                     for project in portfolio {
                         ProjectCard { project: project }
