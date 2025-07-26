@@ -15,7 +15,7 @@ pub fn Links() -> Element {
             a {
                 href:"https://dioxuslabs.com/",
                 target:"_blank",
-                class:"hover:underline",
+                class:"hover:underline text-blue-500",
                 {"Dioxus"}
             },
             img {

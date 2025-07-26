@@ -35,7 +35,7 @@ pub fn Navbar() -> Element {
 
     rsx! {
         div { 
-            class: "overflow-y-hidden h-40 md:h-20 flex scroll-smooth bg-slate-900 text-slate-100 text-xl p-6 flex justify-right sticky top-0 z-50",
+            class: "overflow-y-hidden h-40 md:h-20 flex scroll-smooth bg-slate-900 text-slate-100 text-xl p-6  flex justify-right sticky top-0 z-50",
             div { 
                 class: "flex flex-row gap-x-3 md:gap-x-6 ml-auto items-center justify-center",
                 h1 {
@@ -55,7 +55,7 @@ pub fn Navbar() -> Element {
                 
                 // Desktop menu (hidden on mobile)
                 div { 
-                    class: "hidden md:flex flex-row gap-x-3 text-2xl",
+                    class: "hidden md:flex flex-row gap-x-3 text-xl",
                     button {
                         onclick: |_| scroll_to_id("hero"),
                         class: "hover:cursor-pointer hover:text-slate-400 transition-colors",

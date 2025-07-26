@@ -22,7 +22,7 @@ pub fn Projects() -> Element {
     let portfolio = get_portfolio();
 
     rsx! {
-        div { class:"bg-slate-200  w-full min-h-screen p-4 pt-8 md:p-8 ",
+        div { class:"bg-slate-300  w-full min-h-screen p-4 pt-8 md:p-8 ",
         id:"projects",
 
             // Projects grid
@@ -47,14 +47,14 @@ fn ProjectCard(project: Project) -> Element {
                 img {
                     src: "{project.img_url}",
                     alt: "{project.title}",
-                    class: "w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    class: "border-b border-slate-300 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 }
             }
 
             // Project content
             div { class: "p-4",
                 // Title
-                div { class:"flex flex-row",
+                div { class:"flex flex-row items-center",
                 h3 { class: "text-xl font-bold text-gray-800 mb-2", "{project.title}" }
                 for stack_item in project.stack {
                             a {
@@ -64,8 +64,7 @@ fn ProjectCard(project: Project) -> Element {
                                 class:"group",
                             img {
                                 src: "{stack_item.img_url}",
-
-                                class: "ml-2 w-6 h-6 gap-x-2 transition-transform duration-200 group-hover:scale-110 group-hover:drop-shadow"
+                                class: "ml-3  w-6 mb-1 gap-x-2 transition-transform duration-200 group-hover:scale-110 group-hover:drop-shadow"
                             }
                         }
                     }
@@ -82,7 +81,7 @@ fn ProjectCard(project: Project) -> Element {
                         href: "{project.repository}",
                         target: "_blank",
                         rel: "noopener noreferrer",
-                        class: "inline-flex items-center px-4 py-2 text-blue-500 text-sm font-medium rounded-md hover:underline  transition-colors duration-200",
+                        class: "inline-flex  items-center text-blue-500 text-sm font-medium rounded-md hover:underline  transition-colors duration-200",
                         // GitHub icon (using Unicode)
                         "View on GitHub"
                     }
