@@ -48,7 +48,7 @@ pub fn Navbar() -> Element {
                     onclick: toggle_menu,
                     img {
                         src: asset!("/assets/icons/menu.svg"),
-                        class: "h-8"
+                        style: "width:2rem;height:2rem;",
                     }
                 }
                 
@@ -82,7 +82,7 @@ pub fn Navbar() -> Element {
         // Mobile dropdown menu
         if menu_open() {
             div {
-                class: "md:hidden  bg-slate-900 text-slate-100 absolute top-12 left-0 right-0 z-40 border-t border-slate-700",
+                class: "md:hidden pb-2  bg-slate-900 text-slate-100 absolute top-12 left-0 right-0 z-40 border-t border-slate-700",
                 
                 div {
                     
@@ -92,22 +92,22 @@ pub fn Navbar() -> Element {
                     }
                     button {
                         onclick: close_menu_and_scroll("hero"),
-                        class: "font-semibold border text-center text-lg py-2 px-2 hover:bg-slate-800 rounded transition-colors",
+                        class: "font-semibold bg-slate-800 border text-center text-lg py-2 px-2 hover:bg-slate-700 rounded transition-colors",
                         "Home"
                     }
                     button {
                         onclick: close_menu_and_scroll("projects"),
-                        class: "font-semibold border text-center text-lg py-2 px-2 hover:bg-slate-800 rounded transition-colors",
+                        class: "font-semibold bg-slate-800 border text-center text-lg py-2 px-2 hover:bg-slate-700 rounded transition-colors",
                         "Projects"
                     }
                     button {
                         onclick: close_menu_and_scroll("timeline"),
-                        class: "font-semibold border text-center text-lg py-2 px-2 hover:bg-slate-800 rounded transition-colors",
+                        class: "font-semibold bg-slate-800 border text-center text-lg py-2 px-2 hover:bg-slate-700 rounded transition-colors",
                         "Timeline"
                     }
                     button {
                         onclick: close_menu_and_scroll("about"),
-                        class: "font-semibold border text-center text-lg py-2 px-2 hover:bg-slate-800 rounded transition-colors",
+                        class: "font-semibold bg-slate-800 border text-center text-lg py-2 px-2 hover:bg-slate-700 rounded transition-colors",
                         "About Me"
                     }
                 }

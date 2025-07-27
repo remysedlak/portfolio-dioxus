@@ -43,9 +43,11 @@ fn ProjectCard(project: Project) -> Element {
     rsx! {
         div { class: "bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300",
             // Project image
-            div { class: "relative h-48 overflow-hidden ",
+            div { class: "relative overflow-hidden bg-blue-700",
                 img {
+                    style: "height: 12rem; width: 28rem;",
                     src: "{project.img_url}",
+                    loading:"lazy",
                     alt: "{project.title}",
                     class: "border-b border-slate-300 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 }
@@ -64,7 +66,8 @@ fn ProjectCard(project: Project) -> Element {
                                 class:"group",
                             img {
                                 src: "{stack_item.img_url}",
-                                class: "ml-3  w-6 mb-1 gap-x-2 transition-transform duration-200 group-hover:scale-110 group-hover:drop-shadow"
+                                style:"width: 1.5rem; height: 1.5rem;",
+                                class: "ml-3 mb-1 gap-x-2 transition-transform duration-200 group-hover:scale-110 group-hover:drop-shadow"
                             }
                         }
                     }

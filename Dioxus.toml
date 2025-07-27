@@ -10,7 +10,7 @@ title = "Remy Sedlak"
 assets = ["assets"]
 
 # Additional CSS style files
-style = []
+style = ["/assets/tailwind.css"]
 
 # Additional JavaScript files
 script = []
