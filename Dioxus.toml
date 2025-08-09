@@ -9,9 +9,6 @@ title = "Remy Sedlak"
 [web.resource]
 assets = ["assets"]
 
-# Additional CSS style files
-style = ["/assets/tailwind.css"]
-
 # Additional JavaScript files
 script = []
 

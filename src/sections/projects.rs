@@ -22,7 +22,7 @@ pub fn Projects() -> Element {
     let portfolio = get_portfolio();
 
     rsx! {
-        div { class:"bg-slate-200 w-full p-4 md:p-8 pt-8 ",
+        div { class:"bg-slate-200  w-full p-4 md:p-8 pt-8 ",
         id:"projects",
             h1 { class: "text-4xl font-bold mb-4 md:mb-6", "My Projects" }
             // Projects grid
@@ -43,11 +43,10 @@ fn ProjectCard(project: Project) -> Element {
     rsx! {
         div { class: "bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300",
             // Project image
-            div { class: "relative overflow-hidden bg-blue-700",
+            div { class: "relative overflow-hidden bg-slate-200",
                 img {
                     style: "height: 12rem; width: 28rem;",
                     src: "{project.img_url}",
-                    loading:"lazy",
                     alt: "{project.title}",
                     class: "border-b border-slate-300 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 }

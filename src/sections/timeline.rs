@@ -11,9 +11,11 @@ pub struct TimeLineItem {
 pub const TIMELINE: &[TimeLineItem] = &[
     TimeLineItem {
         year: "2025",
-        title: "Return @ AGI",
-        duration: "present",
-        details: "This summer, I got the opportunity to return to <b>AssetGenie</b> as a developer intern, where I am currently strategizing and implementing <b>database integration</b> between local and cloud ERP systems. More details to come!",
+        title: "Intern @ AGI",
+        duration: "12 weeks",
+        details: "Returned to <b>AssetGenie</b> for a summer internship focused on <b>backend development</b> and <b>data engineering</b>. 
+    Contributed to enhancing internal operations by designing and implementing automated <b>data processing</b> solutions. 
+    Collaborated closely with engineers and directors to improve <b>system performance</b>, streamline workflows, and strengthen <b>database management</b> processes.",
     },
     TimeLineItem {
         year: "2025",
@@ -36,7 +38,7 @@ pub const TIMELINE: &[TimeLineItem] = &[
     TimeLineItem {
         year: "2024",
         title: "Intern @ AGI",
-        duration: "2 months",
+        duration: "8 weeks",
         details: "Secured my first <b>technical internship</b> at <a class=\"text-blue-500 hover:underline\" target=\"_blank\" class=\"underline text-blue-400\" href=\"https://agigrouponline.com/\">AssetGenie Inc.</a>, where I built <b>Python automation tools</b> integrated with GitLab and Excel to streamline data processing workflows. Gained hands-on experience in <b>data engineering</b>, scripting, and backend development, enhancing operational efficiency across teams. Worked in a <b>fast-paced environment</b>, collaborating with engineers to optimize automation processes and improve internal data management systems.",
     },
     TimeLineItem {
@@ -74,7 +76,7 @@ pub fn Timeline() -> Element {
                 {TIMELINE.iter().map(|entry| {
                     rsx! {
                         div {
-                            class: "bg-gray-100 rounded-2xl p-6 shadow-lg",
+                            class: "bg-white rounded-2xl p-6 shadow-lg",
                             h2 {
                                 class: "text-2xl font-semibold",
                                 "{entry.title} ({entry.year})"

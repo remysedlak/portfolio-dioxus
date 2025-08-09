@@ -71,7 +71,9 @@ pub fn About() -> Element {
                         class: "text-base md:text-lg font-normal text-slate-700",
                         "I love taking on new challenges and learning from every project I tackle. Each line of code I write is a step toward turning imagination into something real and impactful."
                     }
+                    // ScrollButton { target_id: "links" }
                 }
+                
 
                 // // Gallery block - 1/3 on medium+ screens
                 // div {
@@ -116,6 +118,7 @@ pub fn About() -> Element {
                 //     }
                 // }
             }
+            
         }
         }
     }

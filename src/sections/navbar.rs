@@ -74,7 +74,12 @@ pub fn Navbar() -> Element {
                         onclick: |_| scroll_to_id("about"),
                         class: "hover:cursor-pointer hover:text-slate-400  transition-colors",
                         "About",
-                    },           
+                    },       
+                    button {
+                        onclick: |_| scroll_to_id("contact"),
+                        class: "hover:cursor-pointer hover:text-slate-400  transition-colors",
+                        "Contact",
+                    },        
                 }
             }
         }
@@ -109,6 +114,11 @@ pub fn Navbar() -> Element {
                         onclick: close_menu_and_scroll("about"),
                         class: "font-semibold bg-slate-800 border text-center text-lg py-2 px-2 hover:bg-slate-700 rounded transition-colors",
                         "About Me"
+                    }
+                    button {
+                        onclick: close_menu_and_scroll("contact"),
+                        class: "font-semibold bg-slate-800 border text-center text-lg py-2 px-2 hover:bg-slate-700 rounded transition-colors",
+                        "Contact"
                     }
                 }
             }

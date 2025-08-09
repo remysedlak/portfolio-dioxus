@@ -1,5 +1,6 @@
 use dioxus::prelude::*;
-use pages::{Home};
+use dioxus::document::{Link, Stylesheet};
+use pages::Home;
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
@@ -14,8 +15,8 @@ fn main() {
 #[component]
 fn App() -> Element {
     rsx! {
-        document::Link { rel: "stylesheet", href: TAILWIND_CSS }
-        document::Link { rel: "icon", href: FAVICON }
+        Stylesheet { href: TAILWIND_CSS }
+        Link { rel: "icon", href: FAVICON }
         Home {}
     }
 }

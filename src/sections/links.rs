@@ -1,10 +1,9 @@
 use dioxus::prelude::*;
 use web_sys::window;
 
-
 #[component]
 pub fn Links() -> Element {
-     let load_event_end = window()
+    let load_event_end = window()
         .expect("no global `window`")
         .performance()
         .expect("performance not available")
@@ -24,79 +23,114 @@ pub fn Links() -> Element {
         0.0
     };
     rsx! { div {
-        class:"p-6 space-y-6 bg-yellow-50 relative",
-        id:"links",
-        h1 {
-            class:"text-3xl  md:text-4xl font-bold mb-2 md:mb-4",
-            "Links"
+            class:"pt-6 px-6 bg-yellow-50 relative pb-2",
+            id:"contact",
+            h1 {
+                class:"text-3xl  md:text-4xl font-bold mb-2 md:mb-3",
+                "Contact"
+            }
+
+            ul { class:"text-xl  mb-2 md:mb-3",
+                li {
+                    a {
+                        href: "https://github.com/remysedlak",
+                        target:"_blank",
+                        class:"hover:underline flex flex-row items-center inline-block",
+                        p { class:"inline",
+                            "GitHub"
+                        }
+                        img { class:"ml-1 inline",
+                            src: asset!("/assets/icons/open-link.svg"),
+                            style: "width:1rem;height:1rem;"
+                        }
+                    }
+                }
+                li {
+                    a {
+                        href: "https://www.linkedin.com/in/remysedlak/",
+                        target:"_blank",
+                        class:"hover:underline flex flex-row items-center inline-block transition-colors",
+                        p { class:"inline",
+                            "LinkedIn"
+                        }
+                        img { class:"ml-1 inline",
+                            src: asset!("/assets/icons/open-link.svg"),
+                            style: "width:1rem;height:1rem;"
+                        }
+                    }
+
+
+                }
+                li {
+                    a {
+                        target:"_blank",
+                        class:"hover:underline flex flex-row items-center inline-block",
+                        href:"https://drive.google.com/file/d/1-gW3kevUAv6ImxSWIZgw-VO9A38-KFCk/view",
+                        p { class:"inline",
+                            "Resume"
+                        }
+                        img { class:"ml-1 inline",
+                            src: asset!("/assets/icons/open-link.svg"),
+                            style: "width:1rem;height:1rem;"
+                        }
+                    }
+
+                }
+                li {
+                    a {
+                        href:"mailto:remysedlak@gmail.com",
+                        target:"_blank",
+                        class:"hover:underline flex flex-row items-center inline-block",
+                        p { class:"inline",
+                            "Email"
+                        }
+                        img { class:"ml-1 inline",
+                            src: asset!("/assets/icons/open-link.svg"),
+                            style: "width:1rem;height:1rem;"
+                        }
+                    }
+
+                }
+            }
+
         }
-        
+        div {class:"text-zinc-600 gap-x-1 md:gap-x-2 font-light flex bg-yellow-50 py-1 text-center items-center justify-center text-xs md:text-sm",
+
+
         p {
-            class:"absolute right-4 md:right-6 bottom-4 mb-auto font-light text-sm text-zinc-600 justify-right align-items-right",
-            
-            
-            {"Assembled with "},
-            a {
-                href:"https://dioxuslabs.com/",
-                target:"_blank",
-                class:"hover:underline text-blue-500",
-                {"Dioxus"}
-            },
-            img {
-                class:"inline ml-1",
-                src:asset!("/assets/icons/ferris.png"),
-                style:"height: 1.3rem; width: 1.75rem;",
-            },
-            div {
-            class: "text-sm block text-zinc-600 mt-2  flex flex-row",
-            "Load time: " 
-            p {  class:"font-mono ml-2 border rounded-md text-sm px-1 bg-zinc-300 hover:bg-zinc-200", 
-                "{duration} ms"
-            }
+            "Remy Sedlak © 2025"
+        },
+        p {
+            "•"
+        },
+        div { class:"flex flex-row gap-x-1 items-center justify-center",
+                
+        p {
+                {"Assembled with "},
         }
-            
-            
-        }
-        ul { class:"text-xl",
-            li {
+
                 a {
-                    href: "https://github.com/remysedlak",
+                    href:"https://dioxuslabs.com/",
                     target:"_blank",
-                    class:"hover:underline",
-                    {"GitHub"}
+                    class:"hover:underline text-blue-500 inline",
+                    {"Dioxus"}
+                },
+                p { class:"hidden md:inline",
+                    " in "
+                },
+
+                p {  class:"hidden md:inline text-center",
+                    "{duration} ms"
                 }
-                
-                
-            }
-            li {
-                a {
-                    href: "https://www.linkedin.com/in/remysedlak/",
-                    target:"_blank",
-                    class:"hover:underline",
-                    {"LinkedIn"}
-                }
-        
-                
-            }
-            li {
-                a {
-                    target:"_blank",
-                    class:"hover:underline",
-                    href:"https://drive.google.com/file/d/1-gW3kevUAv6ImxSWIZgw-VO9A38-KFCk/view",
-                    {"Resume"}
-                }
-                
-            }
-            li {
-                a {
-                    href:"mailto:remysedlak@gmail.com",
-                    target:"_blank",
-                    class:"hover:underline",
-                    {"Email"}
-                }
-                
+                img {
+                    class:"md:hidden inline ml-1 w-5 h-4",
+                    src:asset!("/assets/icons/ferris.png"),
+                },
+                img {
+                    class:"hidden md:inline md:w-7 md:h-5 mt-1 ml-[1/2]",
+                    src:asset!("/assets/icons/ferris.png"),
+                },
             }
         }
     }
-}
 }
