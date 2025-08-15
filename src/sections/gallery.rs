@@ -50,7 +50,7 @@ pub fn About() -> Element {
 
                 // Text block - 2/3 on medium+ screens
                 div {
-                    class: " bg-white p-4 rounded-2xl shadow-2xl text-slate-800 space-y-6 leading-relaxed",
+                    class: "w-full bg-white p-4 rounded-2xl shadow-2xl text-slate-800 space-y-6 leading-relaxed",
 
                     p {
                         class: "text-3xl font-bold text-slate-900 mb-4",

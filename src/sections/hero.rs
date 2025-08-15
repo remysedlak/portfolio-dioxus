@@ -9,8 +9,7 @@ pub fn Hero() -> Element {
             id: "hero",
             // After all attributes are defined, we can define child elements and components
             h1 { class: "text-4xl md:text-6xl font-semibold", "Hello, I am Remy Sedlak!" }
-            h3 { class: "text-3xl mt-4", "Student and Researcher at the University of Pittsburgh" }
-            
+            h2 { class: "text-3xl mt-4", "Student and Researcher at the University of Pittsburgh" }
         }
     }
 }

@@ -45,10 +45,9 @@ fn ProjectCard(project: Project) -> Element {
             // Project image
             div { class: "relative overflow-hidden bg-slate-200",
                 img {
-                    style: "height: 12rem; width: 28rem;",
                     src: "{project.img_url}",
                     alt: "{project.title}",
-                    class: "border-b border-slate-300 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    class: "border-b border-slate-300 w-full h-48 object-cover hover:scale-105 transition-transform duration-300",
                 }
             }
 
@@ -56,7 +55,7 @@ fn ProjectCard(project: Project) -> Element {
             div { class: "p-4",
                 // Title
                 div { class:"flex flex-row items-center",
-                h3 { class: "text-xl font-bold text-gray-800 mb-2", "{project.title}" }
+                h1 { class: "text-xl font-bold text-gray-800 mb-2", "{project.title}" }
                 for stack_item in project.stack {
                             a {
                                 href: "{stack_item.link}",
@@ -66,7 +65,8 @@ fn ProjectCard(project: Project) -> Element {
                             img {
                                 src: "{stack_item.img_url}",
                                 style:"width: 1.5rem; height: 1.5rem;",
-                                class: "ml-3 mb-1 gap-x-2 transition-transform duration-200 group-hover:scale-110 group-hover:drop-shadow"
+                                class: "ml-3 mb-1 gap-x-2 transition-transform duration-200 group-hover:scale-110 group-hover:drop-shadow" ,
+                                alt: "{stack_item.name}",
                             }
                         }
                     }
@@ -81,15 +81,21 @@ fn ProjectCard(project: Project) -> Element {
                 }
 
                 // Repository link
-                div { class: "flex justify-end",
+                div { class: "justify-end flex-row items-center flex",
                     a {
                         href: "{project.repository}",
                         target: "_blank",
                         rel: "noopener noreferrer",
                         class: "inline-flex  items-center text-blue-500 text-sm font-medium rounded-md hover:underline  transition-colors duration-200",
                         // GitHub icon (using Unicode)
-                        "View on GitHub"
+                        "View on GitHub",
+                        img { class:"ml-1 mt-1 inline text-blue-500",
+                            src: asset!("/assets/icons/open-link-blue.svg"),
+                            style: "width:1rem;height:1rem;fill:blue;",
+                            alt: "Open link icon"
+                        }
                     }
+                    
                 }
             }
         }
@@ -100,7 +106,7 @@ pub fn get_portfolio() -> Vec<Project> {
     vec![
         Project {
             title: "The Inqusitor",
-            img_url: asset!("/assets/snapshots/inquisitor.png"),
+            img_url: asset!("/assets/snapshots/inquisitor.png", ImageAssetOptions::new().with_avif()),
             stack: vec![
                 StackItem { img_url: asset!("/assets/icons/stack/python.svg"), name: "python", color: "#B3D3F2", link: "https://www.python.org/" },
                 StackItem { img_url: asset!("/assets/icons/stack/js.svg"),name: "js", color: "#FFD699", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
@@ -111,7 +117,7 @@ pub fn get_portfolio() -> Vec<Project> {
         },
         Project {
             title: "Reflexa",
-            img_url: asset!("/assets/snapshots/reflexa.png"),
+            img_url: asset!("/assets/snapshots/reflexa.png", ImageAssetOptions::new().with_avif()),
             stack: vec![
                 StackItem { img_url: asset!("/assets/icons/stack/react.svg"),name: "react", color: "#B3ECFF", link: "https://react.dev/" },
                 StackItem { img_url: asset!("/assets/icons/stack/django.svg"),name: "django", color: "#B3C6B3", link: "https://www.djangoproject.com/" },
@@ -123,7 +129,7 @@ pub fn get_portfolio() -> Vec<Project> {
         },
         Project {
             title: "TkinterAudio",
-            img_url: asset!("/assets/snapshots/tkinter.png"),
+            img_url: asset!("/assets/snapshots/tkinter.png", ImageAssetOptions::new().with_avif()),
             stack: vec![
                 StackItem { img_url: asset!("/assets/icons/stack/python.svg"), name: "python", color: "#B3D3F2", link: "https://www.python.org/" },
             ],
@@ -132,7 +138,7 @@ pub fn get_portfolio() -> Vec<Project> {
         },
         Project {
             title: "Audio Hub",
-            img_url: asset!("/assets/snapshots/audio-hub.png"),
+            img_url: asset!("/assets/snapshots/audio-hub.png", ImageAssetOptions::new().with_avif()),
             stack: vec![
                 StackItem { img_url: asset!("/assets/icons/stack/react.svg"),name: "react", color: "#B3ECFF", link: "https://react.dev/" },
                 StackItem { img_url: asset!("/assets/icons/stack/vitejs.svg"),name: "vitejs", color: "#D6D6FF", link: "https://vitejs.dev/" },
@@ -143,7 +149,7 @@ pub fn get_portfolio() -> Vec<Project> {
         },
         Project {
             title: "ClipVault",
-            img_url: asset!("/assets/snapshots/clipvault.png"),
+            img_url: asset!("/assets/snapshots/clipvault.png", ImageAssetOptions::new().with_avif()),
             stack: vec![
                 StackItem { img_url: asset!("/assets/icons/stack/rust.svg"),name: "rust", color: "#B3ECFF", link: "https://www.rust-lang.org/" },
                 StackItem { img_url: asset!("/assets/icons/stack/sqlite.png"),name: "sqlite", color: "#B3ECFF", link: "https://www.sqlite.org/" },
@@ -153,7 +159,7 @@ pub fn get_portfolio() -> Vec<Project> {
         },
         Project {
             title: "Plant Parent",
-            img_url: asset!("/assets/snapshots/plant-mob.png"),
+            img_url: asset!("/assets/snapshots/plant-parent.png", ImageAssetOptions::new().with_avif()),
             stack: vec![
                 StackItem { img_url: asset!("/assets/icons/stack/react.svg"),name: "react", color: "#B3ECFF", link: "https://react.dev/" },
                 StackItem { img_url: asset!("/assets/icons/stack/django.svg"),name: "django", color: "#B3C6B3", link: "https://www.djangoproject.com/" },

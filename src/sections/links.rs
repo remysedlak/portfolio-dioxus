@@ -23,14 +23,14 @@ pub fn Links() -> Element {
         0.0
     };
     rsx! { div {
-            class:"pt-6 px-6 bg-yellow-50 relative pb-2",
+            class:"pt-6 px-6 bg-yellow-50 relative pb-4",
             id:"contact",
             h1 {
                 class:"text-3xl  md:text-4xl font-bold mb-2 md:mb-3",
                 "Contact"
             }
 
-            ul { class:"text-xl  mb-2 md:mb-3",
+            ul { class:"text-xl  mb-2 md:mb-4",
                 li {
                     a {
                         href: "https://github.com/remysedlak",
@@ -41,7 +41,8 @@ pub fn Links() -> Element {
                         }
                         img { class:"ml-1 inline",
                             src: asset!("/assets/icons/open-link.svg"),
-                            style: "width:1rem;height:1rem;"
+                            style: "width:1rem;height:1rem;",
+                            alt: "Open link icon"
                         }
                     }
                 }
@@ -55,7 +56,8 @@ pub fn Links() -> Element {
                         }
                         img { class:"ml-1 inline",
                             src: asset!("/assets/icons/open-link.svg"),
-                            style: "width:1rem;height:1rem;"
+                            style: "width:1rem;height:1rem;",
+                            alt: "Open link icon"
                         }
                     }
 
@@ -71,7 +73,8 @@ pub fn Links() -> Element {
                         }
                         img { class:"ml-1 inline",
                             src: asset!("/assets/icons/open-link.svg"),
-                            style: "width:1rem;height:1rem;"
+                            style: "width:1rem;height:1rem;",
+                            alt: "Open link icon"
                         }
                     }
 
@@ -86,7 +89,8 @@ pub fn Links() -> Element {
                         }
                         img { class:"ml-1 inline",
                             src: asset!("/assets/icons/open-link.svg"),
-                            style: "width:1rem;height:1rem;"
+                            style: "width:1rem;height:1rem;",
+                            alt: "Open link icon"
                         }
                     }
 
@@ -94,7 +98,7 @@ pub fn Links() -> Element {
             }
 
         }
-        div {class:"text-zinc-600 gap-x-1 md:gap-x-2 font-light flex bg-yellow-50 py-1 text-center items-center justify-center text-xs md:text-sm",
+        div {class:" text-white gap-x-1 md:gap-x-2 font-light flex bg-slate-800 py-[1/2] text-center items-center justify-center text-xs md:text-sm",
 
 
         p {
@@ -112,7 +116,7 @@ pub fn Links() -> Element {
                 a {
                     href:"https://dioxuslabs.com/",
                     target:"_blank",
-                    class:"hover:underline text-blue-500 inline",
+                    class:"hover:underline text-cyan-100 inline",
                     {"Dioxus"}
                 },
                 p { class:"hidden md:inline",
@@ -122,14 +126,14 @@ pub fn Links() -> Element {
                 p {  class:"hidden md:inline text-center",
                     "{duration} ms"
                 }
+                a { href:"https://rustacean.net/",
                 img {
-                    class:"md:hidden inline ml-1 w-5 h-4",
-                    src:asset!("/assets/icons/ferris.png"),
+                    class:"inline w-8 h-5 mt-[1/2] ml-1 hover:cursor-default",
+                    src:asset!("/assets/icons/ferris.svg"),
+                    title:"Ferris the crab",
+                    alt:"Ferris the crab"
                 },
-                img {
-                    class:"hidden md:inline md:w-7 md:h-5 mt-1 ml-[1/2]",
-                    src:asset!("/assets/icons/ferris.png"),
-                },
+            }
             }
         }
     }
